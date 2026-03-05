@@ -1,31 +1,21 @@
 build/obj/hal_usb_lld.o: \
  ../../chibios_trunk/os/hal/ports/STM32/LLD/OTGv1/hal_usb_lld.c \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/string.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/_ansi.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/newlib.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/_newlib_version.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/config.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/machine/ieeefp.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/features.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/reent.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/_ansi.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stddef.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_types.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/machine/_types.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/machine/_default_types.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/lock.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/cdefs.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_locale.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/strings.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/string.h \
+ /usr/include/newlib/string.h /usr/include/newlib/_ansi.h \
+ /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
+ /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
+ /usr/include/newlib/sys/features.h /usr/include/newlib/sys/reent.h \
+ /usr/include/newlib/_ansi.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h \
+ /usr/include/newlib/sys/_types.h /usr/include/newlib/machine/_types.h \
+ /usr/include/newlib/machine/_default_types.h \
+ /usr/include/newlib/sys/lock.h /usr/include/newlib/sys/cdefs.h \
+ /usr/include/newlib/sys/_locale.h /usr/include/newlib/strings.h \
+ /usr/include/newlib/sys/string.h \
  ../../chibios_trunk/os/hal/include/hal.h \
  ../../chibios_trunk/os/common/portability/GCC/ccportab.h \
  ../../chibios_trunk/os/hal/osal/rt-nil/osal.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stdint.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/stdint.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_intsup.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_stdint.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stdbool.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
  ../../chibios_trunk/os/rt/include/ch.h \
  ../../chibios_trunk/os/license/chlicense.h \
  ../../chibios_trunk/os/license/chversion.h \
@@ -79,7 +69,7 @@ build/obj/hal_usb_lld.o: \
  ../../chibios_trunk/os/oslib/include/chpipes.h \
  ../../chibios_trunk/os/oslib/include/chobjcaches.h \
  ../../chibios_trunk/os/oslib/include/chdelegates.h \
- /home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stdarg.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h \
  ../../chibios_trunk/os/oslib/include/chjobs.h \
  ../../chibios_trunk/os/oslib/include/chfactory.h \
  ../../chibios_trunk/os/rt/include/chdynamic.h cfg/halconf.h \
@@ -138,32 +128,29 @@ build/obj/hal_usb_lld.o: \
  ../../chibios_trunk/os/hal/include/hal_mmc_spi.h \
  ../../chibios_trunk/os/hal/include/hal_serial_usb.h \
  ../../chibios_trunk/os/hal/include/hal_usb_cdc.h
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/string.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/_ansi.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/newlib.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/_newlib_version.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/config.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/machine/ieeefp.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/features.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/reent.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/_ansi.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stddef.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_types.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/machine/_types.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/machine/_default_types.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/lock.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/cdefs.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_locale.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/strings.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/string.h:
+/usr/include/newlib/string.h:
+/usr/include/newlib/_ansi.h:
+/usr/include/newlib/newlib.h:
+/usr/include/newlib/_newlib_version.h:
+/usr/include/newlib/sys/config.h:
+/usr/include/newlib/machine/ieeefp.h:
+/usr/include/newlib/sys/features.h:
+/usr/include/newlib/sys/reent.h:
+/usr/include/newlib/_ansi.h:
+/usr/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h:
+/usr/include/newlib/sys/_types.h:
+/usr/include/newlib/machine/_types.h:
+/usr/include/newlib/machine/_default_types.h:
+/usr/include/newlib/sys/lock.h:
+/usr/include/newlib/sys/cdefs.h:
+/usr/include/newlib/sys/_locale.h:
+/usr/include/newlib/strings.h:
+/usr/include/newlib/sys/string.h:
 ../../chibios_trunk/os/hal/include/hal.h:
 ../../chibios_trunk/os/common/portability/GCC/ccportab.h:
 ../../chibios_trunk/os/hal/osal/rt-nil/osal.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stdint.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/stdint.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_intsup.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/arm-none-eabi/include/sys/_stdint.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stdbool.h:
+/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h:
+/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h:
 ../../chibios_trunk/os/rt/include/ch.h:
 ../../chibios_trunk/os/license/chlicense.h:
 ../../chibios_trunk/os/license/chversion.h:
@@ -218,7 +205,7 @@ boards/BLACKPILL_F401CC/board.h:
 ../../chibios_trunk/os/oslib/include/chpipes.h:
 ../../chibios_trunk/os/oslib/include/chobjcaches.h:
 ../../chibios_trunk/os/oslib/include/chdelegates.h:
-/home/rob/Data/no_sync/ChibiOS/ChibiStudio/tools/GNU\ Tools\ ARM\ Embedded/11.3.1\ 2022q3/lib/gcc/arm-none-eabi/11.3.1/include/stdarg.h:
+/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h:
 ../../chibios_trunk/os/oslib/include/chjobs.h:
 ../../chibios_trunk/os/oslib/include/chfactory.h:
 ../../chibios_trunk/os/rt/include/chdynamic.h:

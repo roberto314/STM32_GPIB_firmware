@@ -1,12 +1,11 @@
-ARM GAS  /tmp/ccB6OXTr.s 			page 1
+ARM GAS  /tmp/ccm9XSZ8.s 			page 1
 
 
-   1              	# 0 "../../chibios_trunk/os/common/ports/ARMv7-M/compilers/GCC/chcoreasm.S"
-   2              	# 1 "/home/rob/Data/no_sync/ChibiOS/ChibiStudio/workspace_trunk/F401_blackpill_GPIB_Adapter///"
+   1              	# 1 "../../chibios_trunk/os/common/ports/ARMv7-M/compilers/GCC/chcoreasm.S"
+   1              	/*
    1              	...
    0              	
    0              	
-   1              	/*
    2              	    ChibiOS - Copyright (C) 2006,2007,2008,2009,2010,2011,2012,2013,2014,
    3              	              2015,2016,2017,2018,2019,2020,2021 Giovanni Di Sirio.
    4              	
@@ -58,10 +57,10 @@ ARM GAS  /tmp/ccB6OXTr.s 			page 1
   13              	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   14              	    GNU General Public License for more details.
   15              	
-ARM GAS  /tmp/ccB6OXTr.s 			page 2
-
-
   16              	    You should have received a copy of the GNU General Public License
+ARM GAS  /tmp/ccm9XSZ8.s 			page 2
+
+
   17              	    along with this program.  If not, see <http://www.gnu.org/licenses/>.
   18              	*/
   19              	
@@ -118,10 +117,10 @@ ARM GAS  /tmp/ccB6OXTr.s 			page 1
   69              	#include "chcustomer.h"
    1              	/*
   70              	#if CH_LICENSE == CH_LICENSE_PARTNER
-ARM GAS  /tmp/ccB6OXTr.s 			page 3
-
-
   38              	#include "chconf.h"
+ARM GAS  /tmp/ccm9XSZ8.s 			page 3
+
+
    1              	/*
   39              	#include "chcore.h"
    1              	/*
@@ -178,10 +177,10 @@ ARM GAS  /tmp/ccB6OXTr.s 			page 1
   20              	 *
   21              	 * @defgroup ARMCMx_STM32F4xx STM32F4xx Specific Parameters
   22              	 * @ingroup ARMCMx_SPECIFIC
-ARM GAS  /tmp/ccB6OXTr.s 			page 4
-
-
   23              	 * @details This file contains the Cortex-M4 specific parameters for the
+ARM GAS  /tmp/ccm9XSZ8.s 			page 4
+
+
   24              	 *          STM32F4xx platform.
   25              	 * @{
   26              	 */
@@ -238,10 +237,10 @@ ARM GAS  /tmp/ccB6OXTr.s 			page 1
   49              	#elif defined(_CHIBIOS_NIL_CONF_)
   50              	#define CONTEXT_OFFSET  0
   51              	
-ARM GAS  /tmp/ccB6OXTr.s 			page 5
-
-
   52              	#else
+ARM GAS  /tmp/ccm9XSZ8.s 			page 5
+
+
   53              	#error "invalid chconf.h"
   54              	#endif
   55              	
@@ -298,10 +297,10 @@ ARM GAS  /tmp/ccB6OXTr.s 			page 1
  106              	 * Threads execution starts here, the code leaves the system critical zone
  107              	 * and then jumps into the thread function passed in register R4. The
  108              	 * register R5 contains the thread parameter. The function chThdExit() is
-ARM GAS  /tmp/ccB6OXTr.s 			page 6
-
-
  109              	 * called on thread function return.
+ARM GAS  /tmp/ccm9XSZ8.s 			page 6
+
+
  110              	 *--------------------------------------------------------------------------*/
  111              	                .thumb_func
  112              	                .globl  __port_thread_start
@@ -358,12 +357,12 @@ ARM GAS  /tmp/ccB6OXTr.s 			page 1
  163              	                cpsie   i
  164              	#else /* !CORTEX_SIMPLIFIED_PRIORITY */
  165 0032 00DF     	                svc     #0
-ARM GAS  /tmp/ccB6OXTr.s 			page 7
-
-
  166              	#endif /* !CORTEX_SIMPLIFIED_PRIORITY */
+ARM GAS  /tmp/ccm9XSZ8.s 			page 7
+
+
  167 0034 FEE7     	.L1:            b       .L1
-ARM GAS  /tmp/ccB6OXTr.s 			page 8
+ARM GAS  /tmp/ccm9XSZ8.s 			page 8
 
 
 DEFINED SYMBOLS

@@ -1,12 +1,11 @@
-ARM GAS  /tmp/ccTXGUio.s 			page 1
+ARM GAS  /tmp/ccScglsD.s 			page 1
 
 
-   1              	# 0 "../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S"
-   2              	# 1 "/home/rob/Data/no_sync/ChibiOS/ChibiStudio/workspace_trunk/F401_blackpill_GPIB_Adapter///"
+   1              	# 1 "../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S"
+   1              	/*
    1              	...
    0              	
    0              	
-   1              	/*
    2              	    ChibiOS - Copyright (C) 2006..2018 Giovanni Di Sirio
    3              	
    4              	    Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,10 +57,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
   24              	 *          STM32F4xx platform.
   25              	 * @{
   26              	 */
-ARM GAS  /tmp/ccTXGUio.s 			page 2
-
-
   27              	
+ARM GAS  /tmp/ccScglsD.s 			page 2
+
+
   28              	#ifndef CMPARAMS_H
   29              	#define CMPARAMS_H
   30              	
@@ -118,10 +117,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
   43              	
   44              	/*===========================================================================*/
   45              	/* Code section.                                                             */
-ARM GAS  /tmp/ccTXGUio.s 			page 3
-
-
   46              	/*===========================================================================*/
+ARM GAS  /tmp/ccScglsD.s 			page 3
+
+
   47              	
   48              	#if !defined(__DOXYGEN__)
   49              	
@@ -178,10 +177,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
   85      00000000 
   86              	#endif
   87              	#if CORTEX_NUM_VECTORS > 20
-ARM GAS  /tmp/ccTXGUio.s 			page 4
-
-
   88 0090 00000000 	        .long       Vector90,   Vector94,   Vector98,   Vector9C
+ARM GAS  /tmp/ccScglsD.s 			page 4
+
+
   88      00000000 
   88      00000000 
   88      00000000 
@@ -238,10 +237,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  115 0120 00000000 	        .long       Vector120,  Vector124,  Vector128,  Vector12C
  115      00000000 
  115      00000000 
-ARM GAS  /tmp/ccTXGUio.s 			page 5
-
-
  115      00000000 
+ARM GAS  /tmp/ccScglsD.s 			page 5
+
+
  116              	#endif
  117              	#if CORTEX_NUM_VECTORS > 60
  118 0130 00000000 	        .long       Vector130,  Vector134,  Vector138,  Vector13C
@@ -298,10 +297,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  142      00000000 
  143              	#endif
  144              	#if CORTEX_NUM_VECTORS > 96
-ARM GAS  /tmp/ccTXGUio.s 			page 6
-
-
  145 01c0 00000000 	        .long       Vector1C0,  Vector1C4,  Vector1C8,  Vector1CC
+ARM GAS  /tmp/ccScglsD.s 			page 6
+
+
  145      00000000 
  145      00000000 
  145      00000000 
@@ -358,10 +357,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  193              	        .long       Vector2C0,  Vector2C4,  Vector2C8,  Vector2CC
  194              	#endif
  195              	#if CORTEX_NUM_VECTORS > 164
-ARM GAS  /tmp/ccTXGUio.s 			page 7
-
-
  196              	        .long       Vector2D0,  Vector2D4,  Vector2D8,  Vector2DC
+ARM GAS  /tmp/ccScglsD.s 			page 7
+
+
  197              	#endif
  198              	#if CORTEX_NUM_VECTORS > 168
  199              	        .long       Vector2E0,  Vector2E4,  Vector2E8,  Vector2EC
@@ -418,10 +417,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  250              	        .long       Vector3F0,  Vector3F4,  Vector3F8,  Vector3FC
  251              	#endif
  252              	
-ARM GAS  /tmp/ccTXGUio.s 			page 8
-
-
  253              	        .text
+ARM GAS  /tmp/ccScglsD.s 			page 8
+
+
  254              	
  255              	        .align      2
  256              	        .thumb_func
@@ -478,10 +477,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  307              	#if CORTEX_NUM_VECTORS > 44
  308              	        .weak       VectorF0,   VectorF4,   VectorF8,   VectorFC
  309              	#endif
-ARM GAS  /tmp/ccTXGUio.s 			page 9
-
-
  310              	#if CORTEX_NUM_VECTORS > 48
+ARM GAS  /tmp/ccScglsD.s 			page 9
+
+
  311              	        .weak       Vector100,  Vector104,  Vector108,  Vector10C
  312              	#endif
  313              	#if CORTEX_NUM_VECTORS > 52
@@ -538,10 +537,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  364              	#if CORTEX_NUM_VECTORS > 120
  365              	        .weak       Vector220,  Vector224,  Vector228,  Vector22C
  366              	#endif
-ARM GAS  /tmp/ccTXGUio.s 			page 10
-
-
  367              	#if CORTEX_NUM_VECTORS > 124
+ARM GAS  /tmp/ccScglsD.s 			page 10
+
+
  368              	        .weak       Vector230,  Vector234,  Vector238,  Vector23C
  369              	#endif
  370              	#if CORTEX_NUM_VECTORS > 128
@@ -598,10 +597,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  421              	#if CORTEX_NUM_VECTORS > 196
  422              	        .weak       Vector350,  Vector354,  Vector358,  Vector35C
  423              	#endif
-ARM GAS  /tmp/ccTXGUio.s 			page 11
-
-
  424              	#if CORTEX_NUM_VECTORS > 200
+ARM GAS  /tmp/ccScglsD.s 			page 11
+
+
  425              	        .weak       Vector360,  Vector364,  Vector368,  Vector36C
  426              	#endif
  427              	#if CORTEX_NUM_VECTORS > 204
@@ -658,10 +657,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  478              	Vector34:
  479              	        .thumb_func
  480              	PendSV_Handler:
-ARM GAS  /tmp/ccTXGUio.s 			page 12
-
-
  481              	        .thumb_func
+ARM GAS  /tmp/ccScglsD.s 			page 12
+
+
  482              	SysTick_Handler:
  483              	        .thumb_func
  484              	Vector40:
@@ -718,10 +717,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  535              	#if CORTEX_NUM_VECTORS > 24
  536              	        .thumb_func
  537              	VectorA0:
-ARM GAS  /tmp/ccTXGUio.s 			page 13
-
-
  538              	        .thumb_func
+ARM GAS  /tmp/ccScglsD.s 			page 13
+
+
  539              	VectorA4:
  540              	        .thumb_func
  541              	VectorA8:
@@ -778,10 +777,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  592              	        .thumb_func
  593              	Vector104:
  594              	        .thumb_func
-ARM GAS  /tmp/ccTXGUio.s 			page 14
-
-
  595              	Vector108:
+ARM GAS  /tmp/ccScglsD.s 			page 14
+
+
  596              	        .thumb_func
  597              	Vector10C:
  598              	        .thumb_func
@@ -838,10 +837,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  649              	Vector168:
  650              	        .thumb_func
  651              	Vector16C:
-ARM GAS  /tmp/ccTXGUio.s 			page 15
-
-
  652              	        .thumb_func
+ARM GAS  /tmp/ccScglsD.s 			page 15
+
+
  653              	Vector170:
  654              	        .thumb_func
  655              	Vector174:
@@ -898,10 +897,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  706              	        .thumb_func
  707              	Vector1D0:
  708              	        .thumb_func
-ARM GAS  /tmp/ccTXGUio.s 			page 16
-
-
  709              	Vector1D4:
+ARM GAS  /tmp/ccScglsD.s 			page 16
+
+
  710              	        .thumb_func
  711              	Vector1D8:
  712              	        .thumb_func
@@ -958,10 +957,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  763              	Vector234:
  764              	        .thumb_func
  765              	Vector238:
-ARM GAS  /tmp/ccTXGUio.s 			page 17
-
-
  766              	        .thumb_func
+ARM GAS  /tmp/ccScglsD.s 			page 17
+
+
  767              	Vector23C:
  768              	#endif
  769              	#if CORTEX_NUM_VECTORS > 128
@@ -1018,10 +1017,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  820              	        .thumb_func
  821              	Vector29C:
  822              	#endif
-ARM GAS  /tmp/ccTXGUio.s 			page 18
-
-
  823              	#if CORTEX_NUM_VECTORS > 152
+ARM GAS  /tmp/ccScglsD.s 			page 18
+
+
  824              	        .thumb_func
  825              	Vector2A0:
  826              	        .thumb_func
@@ -1078,10 +1077,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  877              	#if CORTEX_NUM_VECTORS > 176
  878              	        .thumb_func
  879              	Vector300:
-ARM GAS  /tmp/ccTXGUio.s 			page 19
-
-
  880              	        .thumb_func
+ARM GAS  /tmp/ccScglsD.s 			page 19
+
+
  881              	Vector304:
  882              	        .thumb_func
  883              	Vector308:
@@ -1138,10 +1137,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  934              	        .thumb_func
  935              	Vector364:
  936              	        .thumb_func
-ARM GAS  /tmp/ccTXGUio.s 			page 20
-
-
  937              	Vector368:
+ARM GAS  /tmp/ccScglsD.s 			page 20
+
+
  938              	        .thumb_func
  939              	Vector36C:
  940              	        .thumb_func
@@ -1198,10 +1197,10 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  991              	Vector3C8:
  992              	        .thumb_func
  993              	Vector3CC:
-ARM GAS  /tmp/ccTXGUio.s 			page 21
-
-
  994              	        .thumb_func
+ARM GAS  /tmp/ccScglsD.s 			page 21
+
+
  995              	Vector3D0:
  996              	        .thumb_func
  997              	Vector3D4:
@@ -1235,7 +1234,7 @@ ARM GAS  /tmp/ccTXGUio.s 			page 1
  1025              	_unhandled_exception:
  1026              	.stay:
  1027 0006 FEE7     	        b           .stay
-ARM GAS  /tmp/ccTXGUio.s 			page 22
+ARM GAS  /tmp/ccScglsD.s 			page 22
 
 
 DEFINED SYMBOLS
@@ -1295,7 +1294,7 @@ DEFINED SYMBOLS
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:563    .text:0000000000000002 VectorD0
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:565    .text:0000000000000002 VectorD4
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:567    .text:0000000000000002 VectorD8
-ARM GAS  /tmp/ccTXGUio.s 			page 23
+ARM GAS  /tmp/ccScglsD.s 			page 23
 
 
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:569    .text:0000000000000002 VectorDC
@@ -1355,7 +1354,7 @@ DEFINED SYMBOLS
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:691    .text:0000000000000002 Vector1B4
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:693    .text:0000000000000002 Vector1B8
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:695    .text:0000000000000002 Vector1BC
-ARM GAS  /tmp/ccTXGUio.s 			page 24
+ARM GAS  /tmp/ccScglsD.s 			page 24
 
 
 ../../chibios_trunk/os/common/startup/ARMCMx/compilers/GCC/vectors.S:699    .text:0000000000000002 Vector1C0

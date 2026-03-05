@@ -19,6 +19,6 @@
 #define SHELL_MAX_COMPLETIONS     4
 #define SHELL_USE_ESC_SEQ         TRUE
 #define SHELL_CMD_ECHO_ENABLED    TRUE
-#define SHELL_PROMPT_STR "Serial_Sniffer> "
+#define SHELL_PROMPT_STR "GPIB Converter> "
 
 #endif /* SHELLCONF_H_ */

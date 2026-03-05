@@ -14,5 +14,6 @@
 #define OK(); do{cli_println(" ... OK"); chThdSleepMilliseconds(20);}while(0)
 
 void cmd_test(BaseSequentialStream *chp, int argc, char *argv[]);
+void cmd_debug(BaseSequentialStream *chp, int argc, char *argv[]);
 
 #endif /* USERLIB_INCLUDE_COMM_H_ */

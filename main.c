@@ -38,6 +38,56 @@ uint32_t increase_rwcnt(uint32_t cnt);
 BaseSequentialStream *const shell = (BaseSequentialStream *)&SHELLPORT;
 BaseSequentialStream *const dbg = (BaseSequentialStream *)&DEBUGPORT;
 extern THD_WORKING_AREA(waGPIB_Thread, 128);
+mailbox_t mb_dbg; // Mailbox for Debug Thread
+msg_t msgbuf_dbg[8]; // Message Bufer for Debug Thread
+uint8_t dbg_src;  // Debug Thread Vars.
+uint16_t hi, lo;  // Debug Thread Vars.
+uint8_t debuglevel = 0;
+/*===========================================================================*/
+/* Debug Thread                                                              */
+/* we get a msg which is a 32bit value, 32..25 is the source, 24..17 is the  */
+/* high byte (not used for now) and 16..0  the low word */
+/*===========================================================================*/
+static THD_WORKING_AREA(waDebugThread1, 128);
+THD_FUNCTION(DebugThread1, arg) {
+  (void)arg;
+  msg_t msg;
+  chMBObjectInit(&mb_dbg, msgbuf_dbg, 8);
+
+  while (true) {
+    chMBFetchTimeout(&mb_dbg, &msg, TIME_INFINITE);
+    dbg_src = (uint8_t)((msg >> 24) & debuglevel); //one bit in debuglevel is for one source
+    //hi = (uint16_t)(msg >> 16);
+    lo = (uint16_t)(msg);
+    if (debuglevel){  // debug only when debuglevel > 0
+      switch (dbg_src){
+        case 1:
+          switch (lo){
+            case 1:
+              chprintf(dbg, "click long.\r\n");
+            break;  
+            case 2:
+              chprintf(dbg, "click once.\r\n");
+            break;  
+            case 3:
+              chprintf(dbg, "click double.\r\n");
+            break;  
+            //case 4:
+            //  chprintf(dbg, "click immediately.\r\n");
+            //break;  
+            default:
+              chprintf(dbg, "unknown message for %d!\r\n", dbg_src);
+            break;  
+          }
+        break;
+        default:
+          //chprintf(dbg, "unknown message source: %d!\r\n", dbg_src);
+        break;
+      }
+    }
+    chThdSleepMilliseconds(50);
+  }
+}
 
 /*===========================================================================*/
 /* Button related code.                                                      */
@@ -73,14 +123,14 @@ static void vt2_cb(virtual_timer_t *vtp, void *p) { // Timer cb after 200ms (dou
   switch (btn_cnt){
   case 1:
     if (btn_second_edge){ // only for the first edge
-      chprintf(dbg, "click long. %d \r\n");
+      chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 1));
     }
     break;
   case 2:
-    chprintf(dbg, "click once. %d \r\n");
+    chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 2));
     break;
   default:
-    chprintf(dbg, "click double. %d \r\n");
+    chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 3));
     break;
   }
 
@@ -96,7 +146,7 @@ static void button_cb(void *arg) {
   }
   else{                  // very first negative going edge or Button released
     btn_second_edge = 1;
-    chprintf(dbg, "click immediately. %d \r\n");
+    //chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 4)); // crashes here!!
   }
   btn_cnt++;           // count edges
   chSysLockFromISR();
@@ -122,6 +172,7 @@ char *completion_buffer[SHELL_MAX_COMPLETIONS];
 
 static const ShellCommand commands[] = {
   {"test",cmd_test},
+  {"debug",cmd_debug},
   {NULL, NULL}
 };
 
@@ -145,9 +196,9 @@ static THD_FUNCTION(Thread1, arg) {
   while (true) {
     systime_t time;
     time = serusbcfg1.usbp->state == USB_ACTIVE ? 250 : 500;
-    palClearPad(GPIOC, 13);
+    palClearLine(LED);
     chThdSleepMilliseconds(time);
-    palSetPad(GPIOC, 13);
+    palSetLine(LED);
     chThdSleepMilliseconds(time);
 
     //chprintf(dbg, "LastWidth: %d \r\n", last_width1);
@@ -174,9 +225,9 @@ int main(void) {
   halInit();
   chSysInit();
 
-  palSetPadMode(GPIOC, 13, PAL_MODE_OUTPUT_PUSHPULL ); // LED
-  palSetPadMode(GPIOC, 14, PAL_MODE_OUTPUT_PUSHPULL ); // Debug
-  palSetPadMode(GPIOC, 15, PAL_MODE_OUTPUT_PUSHPULL ); // Debug
+  palSetLineMode(LED, PAL_MODE_OUTPUT_PUSHPULL);
+  palSetLineMode(DEBUG1, PAL_MODE_OUTPUT_PUSHPULL);
+  palSetLineMode(DEBUG2, PAL_MODE_OUTPUT_PUSHPULL);
   palSetLineMode(EXTBTN, PAL_MODE_INPUT_PULLUP); // Button
   /* Enabling the event and associating the callback. */
   palEnableLineEvent(EXTBTN, PAL_EVENT_MODE_FALLING_EDGE);
@@ -192,9 +243,9 @@ int main(void) {
 
   //chprintf(dbg, "\r\nSerial Sniffer Programmer: %i.%i \r\nSystem started. (Shell)\r\n", VMAJOR, VMINOR);
   //palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));  // TX2
-  palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));  // RX2
+  //palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));  // RX2
   //palSetPadMode(GPIOA, 9, PAL_MODE_ALTERNATE(7));  // TX1
-  palSetPadMode(GPIOA, 10, PAL_MODE_ALTERNATE(7)); // RX1
+  //palSetPadMode(GPIOA, 10, PAL_MODE_ALTERNATE(7)); // RX1
 
   /*
    * Shell manager initialization.
@@ -205,7 +256,7 @@ int main(void) {
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
   init_GPIB();
   chThdCreateStatic(waGPIB_Thread, sizeof(waGPIB_Thread), NORMALPRIO, GPIB_Thread, NULL);
-
+  chThdCreateStatic(waDebugThread1, sizeof(waDebugThread1), NORMALPRIO, DebugThread1, NULL);
   /*
    * Normal main() thread activity, in this demo it does nothing except
    * sleeping in a loop and check the button state.
