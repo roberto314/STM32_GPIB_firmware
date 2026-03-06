@@ -1,531 +1,538 @@
-ARM GAS  /tmp/ccQLIwXB.s 			page 1
+ARM GAS  /tmp/ccAX5FJs.s 			page 1
 
 
    1              		.cpu cortex-m4
-   2              		.eabi_attribute 20, 1
-   3              		.eabi_attribute 21, 1
-   4              		.eabi_attribute 23, 3
-   5              		.eabi_attribute 24, 1
-   6              		.eabi_attribute 25, 1
-   7              		.eabi_attribute 26, 1
-   8              		.eabi_attribute 30, 2
-   9              		.eabi_attribute 34, 1
-  10              		.eabi_attribute 18, 4
-  11              		.file	"portab.c"
-  12              		.file 1 "./cfg/portab.c"
-  13              		.section	.gnu.debuglto_.debug_info,"e",%progbits
-  14              	.Ldebug_info0:
-  15              		.hidden	portab.c.f1de9903
-  16              		.weak	portab.c.f1de9903
-  17              	portab.c.f1de9903:
-  18 0000 22000000 		.4byte	0x22
-  19 0004 0400     		.2byte	0x4
-  20 0006 00000000 		.4byte	.Ldebug_abbrev0
-  21 000a 04       		.byte	0x4
-  22 000b 01       		.uleb128 0x1
-  23 000c 0D000000 		.4byte	.LASF0
-  24 0010 0C       		.byte	0xc
-  25 0011 D2000000 		.4byte	.LASF1
-  26 0015 E1000000 		.4byte	.LASF2
-  27 0019 00000000 		.4byte	.Ldebug_line0
-  28 001d 02       		.uleb128 0x2
-  29 001e 00000000 		.4byte	.LASF3
-  30 0022 01       		.byte	0x1
-  31 0023 33       		.byte	0x33
-  32 0024 06       		.byte	0x6
-  33 0025 00       		.byte	0
-  34              		.section	.gnu.debuglto_.debug_abbrev,"e",%progbits
-  35              	.Ldebug_abbrev0:
-  36 0000 01       		.uleb128 0x1
-  37 0001 11       		.uleb128 0x11
-  38 0002 01       		.byte	0x1
-  39 0003 25       		.uleb128 0x25
-  40 0004 0E       		.uleb128 0xe
-  41 0005 13       		.uleb128 0x13
-  42 0006 0B       		.uleb128 0xb
-  43 0007 03       		.uleb128 0x3
-  44 0008 0E       		.uleb128 0xe
-  45 0009 1B       		.uleb128 0x1b
-  46 000a 0E       		.uleb128 0xe
-  47 000b 10       		.uleb128 0x10
-  48 000c 17       		.uleb128 0x17
-  49 000d 00       		.byte	0
-  50 000e 00       		.byte	0
-  51 000f 02       		.uleb128 0x2
-  52 0010 2E       		.uleb128 0x2e
-  53 0011 00       		.byte	0
-  54 0012 3F       		.uleb128 0x3f
-  55 0013 19       		.uleb128 0x19
-  56 0014 03       		.uleb128 0x3
-  57 0015 0E       		.uleb128 0xe
-ARM GAS  /tmp/ccQLIwXB.s 			page 2
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"portab.c"
+  14              		.file 1 "./cfg/portab.c"
+  15              		.section	.gnu.debuglto_.debug_info,"e",%progbits
+  16              	.Ldebug_info0:
+  17              		.hidden	portab.c.56e7daba
+  18              		.weak	portab.c.56e7daba
+  19              	portab.c.56e7daba:
+  20 0000 23000000 		.4byte	0x23
+  21 0004 0500     		.2byte	0x5
+  22 0006 01       		.byte	0x1
+  23 0007 04       		.byte	0x4
+  24 0008 00000000 		.4byte	.Ldebug_abbrev0
+  25 000c 01       		.uleb128 0x1
+  26 000d 00000000 		.4byte	.LASF0
+  27 0011 1D       		.byte	0x1d
+  28 0012 BB000000 		.4byte	.LASF1
+  29 0016 D7000000 		.4byte	.LASF2
+  30 001a 00000000 		.4byte	.Ldebug_line0
+  31 001e 02       		.uleb128 0x2
+  32 001f CA000000 		.4byte	.LASF3
+  33 0023 01       		.byte	0x1
+  34 0024 33       		.byte	0x33
+  35 0025 06       		.byte	0x6
+  36 0026 00       		.byte	0
+  37              		.section	.gnu.debuglto_.debug_abbrev,"e",%progbits
+  38              	.Ldebug_abbrev0:
+  39 0000 01       		.uleb128 0x1
+  40 0001 11       		.uleb128 0x11
+  41 0002 01       		.byte	0x1
+  42 0003 25       		.uleb128 0x25
+  43 0004 0E       		.uleb128 0xe
+  44 0005 13       		.uleb128 0x13
+  45 0006 0B       		.uleb128 0xb
+  46 0007 03       		.uleb128 0x3
+  47 0008 0E       		.uleb128 0xe
+  48 0009 1B       		.uleb128 0x1b
+  49 000a 0E       		.uleb128 0xe
+  50 000b 10       		.uleb128 0x10
+  51 000c 17       		.uleb128 0x17
+  52 000d 00       		.byte	0
+  53 000e 00       		.byte	0
+  54 000f 02       		.uleb128 0x2
+  55 0010 2E       		.uleb128 0x2e
+  56 0011 00       		.byte	0
+  57 0012 3F       		.uleb128 0x3f
+ARM GAS  /tmp/ccAX5FJs.s 			page 2
 
 
-  58 0016 3A       		.uleb128 0x3a
-  59 0017 0B       		.uleb128 0xb
-  60 0018 3B       		.uleb128 0x3b
-  61 0019 0B       		.uleb128 0xb
-  62 001a 39       		.uleb128 0x39
-  63 001b 0B       		.uleb128 0xb
-  64 001c 27       		.uleb128 0x27
-  65 001d 19       		.uleb128 0x19
-  66 001e 00       		.byte	0
-  67 001f 00       		.byte	0
-  68 0020 00       		.byte	0
-  69              		.section	.gnu.debuglto_.debug_line,"e",%progbits
-  70              	.Ldebug_line0:
-  71 0000 2A000000 		.4byte	.LELT0-.LSLT0
-  72              	.LSLT0:
-  73 0004 0400     		.2byte	0x4
-  74 0006 24000000 		.4byte	.LELTP0-.LASLTP0
-  75              	.LASLTP0:
-  76 000a 01       		.byte	0x1
-  77 000b 01       		.byte	0x1
-  78 000c 01       		.byte	0x1
-  79 000d F6       		.byte	0xf6
-  80 000e F2       		.byte	0xf2
-  81 000f 0D       		.byte	0xd
-  82 0010 00       		.byte	0
-  83 0011 01       		.byte	0x1
-  84 0012 01       		.byte	0x1
-  85 0013 01       		.byte	0x1
-  86 0014 01       		.byte	0x1
-  87 0015 00       		.byte	0
-  88 0016 00       		.byte	0
-  89 0017 00       		.byte	0
-  90 0018 01       		.byte	0x1
-  91 0019 00       		.byte	0
-  92 001a 00       		.byte	0
-  93 001b 01       		.byte	0x1
-  94 001c 636667   		.ascii	"cfg"
-  95 001f 00       		.byte	0
-  96 0020 00       		.byte	0
-  97 0021 706F7274 		.ascii	"portab.c\000"
-  97      61622E63 
-  97      00
-  98 002a 01       		.uleb128 0x1
-  99 002b 00       		.uleb128 0
- 100 002c 00       		.uleb128 0
- 101 002d 00       		.byte	0
- 102              	.LELTP0:
- 103              	.LELT0:
- 104              		.section	.gnu.debuglto_.debug_str,"eMS",%progbits,1
- 105              	.LASF3:
- 106 0000 706F7274 		.ascii	"portab_setup\000"
- 106      61625F73 
- 106      65747570 
- 106      00
- 107              	.LASF0:
- 108 000d 474E5520 		.ascii	"GNU C17 10.3.1 20210621 (release) -mcpu=cortex-m4 -"
- 108      43313720 
-ARM GAS  /tmp/ccQLIwXB.s 			page 3
+  58 0013 19       		.uleb128 0x19
+  59 0014 03       		.uleb128 0x3
+  60 0015 0E       		.uleb128 0xe
+  61 0016 3A       		.uleb128 0x3a
+  62 0017 0B       		.uleb128 0xb
+  63 0018 3B       		.uleb128 0x3b
+  64 0019 0B       		.uleb128 0xb
+  65 001a 39       		.uleb128 0x39
+  66 001b 0B       		.uleb128 0xb
+  67 001c 27       		.uleb128 0x27
+  68 001d 19       		.uleb128 0x19
+  69 001e 00       		.byte	0
+  70 001f 00       		.byte	0
+  71 0020 00       		.byte	0
+  72              		.section	.gnu.debuglto_.debug_line,"e",%progbits
+  73              	.Ldebug_line0:
+  74 0000 36000000 		.4byte	.LELT0-.LSLT0
+  75              	.LSLT0:
+  76 0004 0500     		.2byte	0x5
+  77 0006 04       		.byte	0x4
+  78 0007 00       		.byte	0
+  79 0008 2E000000 		.4byte	.LELTP0-.LASLTP0
+  80              	.LASLTP0:
+  81 000c 01       		.byte	0x1
+  82 000d 01       		.byte	0x1
+  83 000e 01       		.byte	0x1
+  84 000f F6       		.byte	0xf6
+  85 0010 F2       		.byte	0xf2
+  86 0011 0D       		.byte	0xd
+  87 0012 00       		.byte	0
+  88 0013 01       		.byte	0x1
+  89 0014 01       		.byte	0x1
+  90 0015 01       		.byte	0x1
+  91 0016 01       		.byte	0x1
+  92 0017 00       		.byte	0
+  93 0018 00       		.byte	0
+  94 0019 00       		.byte	0
+  95 001a 01       		.byte	0x1
+  96 001b 00       		.byte	0
+  97 001c 00       		.byte	0
+  98 001d 01       		.byte	0x1
+  99 001e 01       		.byte	0x1
+ 100 001f 01       		.uleb128 0x1
+ 101 0020 1F       		.uleb128 0x1f
+ 102 0021 02       		.uleb128 0x2
+ 103 0022 18000000 		.4byte	.LASF4
+ 104 0026 68000000 		.4byte	.LASF5
+ 105 002a 02       		.byte	0x2
+ 106 002b 01       		.uleb128 0x1
+ 107 002c 1F       		.uleb128 0x1f
+ 108 002d 02       		.uleb128 0x2
+ 109 002e 0B       		.uleb128 0xb
+ 110 002f 02       		.uleb128 0x2
+ 111 0030 00000000 		.4byte	.LASF6
+ 112 0034 00       		.byte	0
+ 113 0035 0F000000 		.4byte	.LASF7
+ 114 0039 01       		.byte	0x1
+ARM GAS  /tmp/ccAX5FJs.s 			page 3
 
 
- 108      31302E33 
- 108      2E312032 
- 108      30323130 
- 109 0040 6D746875 		.ascii	"mthumb -mfloat-abi=soft -march=armv7e-m -ggdb -O2 -"
- 109      6D62202D 
- 109      6D666C6F 
- 109      61742D61 
- 109      62693D73 
- 110 0073 666F6D69 		.ascii	"fomit-frame-pointer -falign-functions=16 -ffunction"
- 110      742D6672 
- 110      616D652D 
- 110      706F696E 
- 110      74657220 
- 111 00a6 2D736563 		.ascii	"-sections -fdata-sections -fno-common -flto\000"
- 111      74696F6E 
- 111      73202D66 
- 111      64617461 
- 111      2D736563 
- 112              	.LASF1:
- 113 00d2 2E2F6366 		.ascii	"./cfg/portab.c\000"
- 113      672F706F 
- 113      72746162 
- 113      2E6300
- 114              	.LASF2:
- 115 00e1 2F686F6D 		.ascii	"/home/rob/Projects/ChibiStudio/ChibiStudio_23/works"
- 115      652F726F 
- 115      622F5072 
- 115      6F6A6563 
- 115      74732F43 
- 116 0114 70616365 		.ascii	"pace_trunk/STM32_GPIB_firmware\000"
- 116      5F747275 
- 116      6E6B2F53 
- 116      544D3332 
- 116      5F475049 
- 117              		.text
- 118              		.section	.gnu.lto_.profile.a8d1e07d887aa3cd,"e",%progbits
- 119 0000 789C6362 		.ascii	"x\234cb\000\001\000\000\022\000\003"
- 119      00010000 
- 119      120003
- 120              		.text
- 121              		.section	.gnu.lto_.icf.a8d1e07d887aa3cd,"e",%progbits
- 122 0000 789CE360 		.ascii	"x\234\343`@\000F\206gS\336?\340`\000\000\017p\003["
- 122      40004686 
- 122      6753DE3F 
- 122      E0600000 
- 122      0F70035B 
- 123              		.text
- 124              		.section	.gnu.lto_.ipa_sra.a8d1e07d887aa3cd,"e",%progbits
- 125 0000 789C6365 		.ascii	"x\234ce@\000F\020\002\000\000m\000\010"
- 125      40004610 
- 125      0200006D 
- 125      0008
- 126              		.text
- 127              		.section	.gnu.lto_.inline.a8d1e07d887aa3cd,"e",%progbits
- 128 0000 789C5361 		.ascii	"x\234Sa@\000F\006\006\346\006 `Jad`b`h\0042\353\030"
- 128      40004606 
- 128      06E60620 
-ARM GAS  /tmp/ccQLIwXB.s 			page 4
+ 115              	.LELTP0:
+ 116              	.LELT0:
+ 117              		.section	.gnu.debuglto_.debug_str,"eMS",%progbits,1
+ 118              	.LASF0:
+ 119 0000 474E5520 		.ascii	"GNU C17 11.3.1 20220712 -mcpu=cortex-m4 -mthumb -mf"
+ 119      43313720 
+ 119      31312E33 
+ 119      2E312032 
+ 119      30323230 
+ 120 0033 6C6F6174 		.ascii	"loat-abi=soft -march=armv7e-m -ggdb -O2 -fomit-fram"
+ 120      2D616269 
+ 120      3D736F66 
+ 120      74202D6D 
+ 120      61726368 
+ 121 0066 652D706F 		.ascii	"e-pointer -falign-functions=16 -ffunction-sections "
+ 121      696E7465 
+ 121      72202D66 
+ 121      616C6967 
+ 121      6E2D6675 
+ 122 0099 2D666461 		.ascii	"-fdata-sections -fno-common -flto\000"
+ 122      74612D73 
+ 122      65637469 
+ 122      6F6E7320 
+ 122      2D666E6F 
+ 123              	.LASF1:
+ 124 00bb 2E2F6366 		.ascii	"./cfg/portab.c\000"
+ 124      672F706F 
+ 124      72746162 
+ 124      2E6300
+ 125              	.LASF3:
+ 126 00ca 706F7274 		.ascii	"portab_setup\000"
+ 126      61625F73 
+ 126      65747570 
+ 126      00
+ 127              	.LASF2:
+ 128 00d7 2F686F6D 		.ascii	"/home/rob/Data/no_sync/ChibiOS/ChibiStudio/workspac"
+ 128      652F726F 
+ 128      622F4461 
+ 128      74612F6E 
+ 128      6F5F7379 
+ 129 010a 655F7472 		.ascii	"e_trunk/STM32_GPIB_firmware/\000"
+ 129      756E6B2F 
+ 129      53544D33 
+ 129      325F4750 
+ 129      49425F66 
+ 130              		.section	.gnu.debuglto_.debug_line_str,"eMS",%progbits,1
+ 131              	.LASF6:
+ 132 0000 2E2F6366 		.ascii	"./cfg/portab.c\000"
+ 132      672F706F 
+ 132      72746162 
+ 132      2E6300
+ 133              	.LASF7:
+ 134 000f 706F7274 		.ascii	"portab.c\000"
+ 134      61622E63 
+ 134      00
+ 135              	.LASF4:
+ 136 0018 2F686F6D 		.ascii	"/home/rob/Data/no_sync/ChibiOS/ChibiStudio/workspac"
+ARM GAS  /tmp/ccAX5FJs.s 			page 4
 
 
- 128      604A6164 
- 128      60626068 
- 129 0018 18D82042 		.ascii	"\030\330 BL !\006\006\000\231\226\007\201"
- 129      4C202106 
- 129      06009996 
- 129      0781
- 130              		.text
- 131              		.section	.gnu.lto_.jmpfuncs.a8d1e07d887aa3cd,"e",%progbits
- 132 0000 789C6365 		.ascii	"x\234ce@\000F\020\001\000\000k\000\007"
- 132      40004610 
- 132      0100006B 
- 132      0007
- 133              		.text
- 134              		.section	.gnu.lto_.pureconst.a8d1e07d887aa3cd,"e",%progbits
- 135 0000 789C6361 		.ascii	"x\234ca```dh`\001\000\0010\000\212"
- 135      60606064 
- 135      68600100 
- 135      0130008A 
- 136              		.text
- 137              		.section	.gnu.lto_.lto.a8d1e07d887aa3cd,"e",%progbits
- 138 0000 09000400 		.ascii	"\011\000\004\000\001\000\000\000"
- 138      01000000 
- 139              		.text
- 140              		.section	.gnu.lto_portab_setup.0.a8d1e07d887aa3cd,"e",%progbits
- 141 0000 789C2B61 		.ascii	"x\234+a``H\001be fdf`\2344\261\213\211\241\241\241\301"
- 141      60604801 
- 141      62652066 
- 141      6466609C 
- 141      34B18B89 
- 142 0018 819D89B1 		.ascii	"\201\235\211\261qb\027'\343VF0\217\221\241\236\211\261"
- 142      71621727 
- 142      E3564630 
- 142      8F91A19E 
- 142      89B1
- 143 002a 9E7132B3 		.ascii	"\236q2\263&\220\373c\351\353\015g\031\033V\034`\\\302"
- 143      2690FB63 
- 143      E9EB0D67 
- 143      191B561C 
- 143      605CC2
- 144 003d CCC0300F 		.ascii	"\314\3000\017\210\241\200\015\306c\004\342\365\227X"
- 144      88A1800D 
- 144      C66304E2 
- 144      F59758
- 145 004c 0F34FCF9 		.ascii	"\0174\374\371\337\337\320p\3661\343[&&\006\206~f\220"
- 145      DFDFD070 
- 145      F631E35B 
- 145      26260686 
- 145      7E6690
- 146 005f D10D2C8C 		.ascii	"\321\015,\214\015\007\030\030&03A8\215@\316+\306\006"
- 146      0D071818 
- 146      26303341 
- 146      388D40CE 
- 146      2BC606
- 147 0072 25864F8C 		.ascii	"%\206O\214M\012`c\372\231\031\021\352\030\030\202\364"
- 147      4D0A6063 
- 147      FA991911 
- 147      EA181882 
-ARM GAS  /tmp/ccQLIwXB.s 			page 5
-
-
- 147      F4
- 148 0083 33F27353 		.ascii	"3\362sS\365\213\362\223\364\003\212\362\263R\223K\212"
- 148      F58BF293 
- 148      F4038AF2 
- 148      B352934B 
- 148      8A
- 149 0094 F59D3332 		.ascii	"\365\23532\2232\203KJS2\363\221\331\361F\306\372\345"
- 149      9332834B 
- 149      4A5332F3 
- 149      91D9F146 
- 149      C6FAE5
- 150 00a7 F945D9C5 		.ascii	"\371E\331\305\005\211\311\251\361%E\245y\331\372\301"
- 150      0589C9A9 
- 150      F12545A5 
- 150      79D9FAC1 
- 151 00b7 21BEC646 		.ascii	"!\276\306F\361\356\001\236N\361i\231E\271\345\211E\251"
- 151      F1EE019E 
- 151      4EF16999 
- 151      45B9E589 
- 151      45A9
- 152 00c9 0CFC7AFA 		.ascii	"\014\374z\372\311i\351\372\005\371E%\211Iz\311\014\000"
- 152      C969E9FA 
- 152      05F94525 
- 152      89497AC9 
- 152      0C00
- 153 00db 4ACB4E7B 		.ascii	"J\313N{"
+ 136      652F726F 
+ 136      622F4461 
+ 136      74612F6E 
+ 136      6F5F7379 
+ 137 004b 655F7472 		.ascii	"e_trunk/STM32_GPIB_firmware/\000"
+ 137      756E6B2F 
+ 137      53544D33 
+ 137      325F4750 
+ 137      49425F66 
+ 138              	.LASF5:
+ 139 0068 63666700 		.ascii	"cfg\000"
+ 140              		.text
+ 141              		.section	.gnu.lto_.profile.ff5b5966139addc5,"e",%progbits
+ 142 0000 789C6362 		.ascii	"x\234cb\000\001\000\000\022\000\003"
+ 142      00010000 
+ 142      120003
+ 143              		.text
+ 144              		.section	.gnu.lto_.icf.ff5b5966139addc5,"e",%progbits
+ 145 0000 789CE364 		.ascii	"x\234\343d@\000F\2063\223\272z\330\031\030\000\016\322"
+ 145      40004686 
+ 145      3393BA7A 
+ 145      D8191800 
+ 145      0ED2
+ 146 0012 0286     		.ascii	"\002\206"
+ 147              		.text
+ 148              		.section	.gnu.lto_.ipa_sra.ff5b5966139addc5,"e",%progbits
+ 149 0000 789C6365 		.ascii	"x\234ce@\000F\020\002\000\000m\000\010"
+ 149      40004610 
+ 149      0200006D 
+ 149      0008
+ 150              		.text
+ 151              		.section	.gnu.lto_.inline.ff5b5966139addc5,"e",%progbits
+ 152 0000 789C5365 		.ascii	"x\234Se@\000F\006\006\346\006 `Jad`b`h\0042\353\030"
+ 152      40004606 
+ 152      06E60620 
+ 152      604A6164 
+ 152      60626068 
+ 153 0018 18D82042 		.ascii	"\030\330 BL ! \000\000\241H\007\202"
+ 153      4C202120 
+ 153      0000A148 
+ 153      0782
  154              		.text
- 155              		.section	.gnu.lto_.symbol_nodes.a8d1e07d887aa3cd,"e",%progbits
- 156 0000 789C9363 		.ascii	"x\234\223c\000\002&\206z\206\006 `a\234p\216\001\310"
- 156      00022686 
- 156      7A860620 
- 156      60619C70 
- 156      8E01C8
- 157 0013 66D8D5D0 		.ascii	"f\330\325\320\310\310\300\310\000\006\000u\024\006?"
- 157      C8C8C0C8 
- 157      00060075 
- 157      14063F
- 158              		.text
- 159              		.section	.gnu.lto_.refs.a8d1e07d887aa3cd,"e",%progbits
- 160 0000 789C6364 		.ascii	"x\234cd\000\002\000\000\012\000\002"
- 160      00020000 
- 160      0A0002
- 161              		.text
- 162              		.section	.gnu.lto_.decls.a8d1e07d887aa3cd,"e",%progbits
- 163 0000 789C8552 		.ascii	"x\234\205RMh\023A\024~o&\311n\307`B\331P\260X\202\027"
- 163      4D681341 
- 163      147E6F26 
- 163      C96EC760 
- 163      42D950B0 
- 164 0017 F7D2AED9 		.ascii	"\367\322\256\331HKo\213\205\026)\226`\365\342%\244\231"
- 164      484B6F8B 
- 164      85162996 
- 164      60F5E225 
- 164      A499
- 165 0029 8D89256E 		.ascii	"\215\211%n\331\246Vo\003\202\365\240R\024\244\240\207"
- 165      D9A6566F 
- 165      0382F5A0 
-ARM GAS  /tmp/ccQLIwXB.s 			page 6
+ 155              		.section	.gnu.lto_.jmpfuncs.ff5b5966139addc5,"e",%progbits
+ 156 0000 789C6365 		.ascii	"x\234ce@\000F\020\001\000\000k\000\007"
+ 156      40004610 
+ 156      0100006B 
+ 156      0007
+ 157              		.text
+ 158              		.section	.gnu.lto_.pureconst.ff5b5966139addc5,"e",%progbits
+ 159 0000 789C6361 		.ascii	"x\234ca```dh`\001\000\0010\000\212"
+ 159      60606064 
+ 159      68600100 
+ 159      0130008A 
+ 160              		.text
+ 161              		.section	.gnu.lto_.ipa_modref.ff5b5966139addc5,"e",%progbits
+ 162 0000 789C6362 		.ascii	"x\234cb@\006\000\000*\000\003"
+ 162      40060000 
+ARM GAS  /tmp/ccAX5FJs.s 			page 5
 
 
- 165      5214A4A0 
- 165      87
- 166 003a 1E0B8A78 		.ascii	"\036\013\212x\260\376\265\027+h@<xR\020\017V\324\205"
- 166      B0FEB517 
- 166      2B68403C 
- 166      7852100F 
- 166      56D485
- 167 004d 7AEC413D 		.ascii	"z\354A=Xg\263\273I\213\007\337\262o\336\274\371~\206"
- 167      5867B3BB 
- 167      498B07DF 
- 167      B26FDEBC 
- 167      F97E86
- 168 0060 99794D00 		.ascii	"\231yM\000V\001\240 \377\035\031r\012\357\240\023(\377"
- 168      5601A020 
- 168      FF1D1972 
- 168      0AEFA013 
- 168      28FF
- 169 0072 75F8372E 		.ascii	"u\3707.a\260V\375\017\356\016%\367\276\254}J~E\360\245"
- 169      61B056FD 
- 169      0FEE0E25 
- 169      F7BEAC7D 
- 169      4A7E45F0 
- 170 0087 631C113F 		.ascii	"c\034\021?\014\312\304\340\014\005M\020A\022\234\022"
- 170      0CCAC4E0 
- 170      0C054D10 
- 170      41129C12 
- 171 0097 4619E5AC 		.ascii	"F\031\345\254\211}\3726\265T\242\247\230\272\362\022"
- 171      897DFA36 
- 171      B554A2A7 
- 171      98BAF212 
- 172 00a7 D32CAE12 		.ascii	"\323,\256\022\342)\234\351\277\361>YNd-\021\343\327"
- 172      E2299CE9 
- 172      BFF13E59 
- 172      4E642D11 
- 172      E3D7
- 173 00b9 329E22C8 		.ascii	"2\236\"\310\342\204\226\267d\366\224&r\311*\304\324"
- 173      E28496B7 
- 173      64F69426 
- 173      72C92AC4 
- 173      D4
- 174 00ca B4AC3C85 		.ascii	"\264\254<\205m\323\345\353\011\376\226\\=\214Md\334"
- 174      6DD3E5EB 
- 174      09FE965C 
- 174      3D8C4D64 
- 174      DC
- 175 00db D4841096 		.ascii	"\324\204\020\226\252\366\2456\350\006\035\005P\325\207"
- 175      AAF6A536 
- 175      E8061D05 
- 175      50D587
- 176 00ea 0F32CC53 		.ascii	"\0172\314SRRB\347\3314\317\246\232\030\347\234i:\310"
- 176      525242E7 
- 176      D934CFA6 
- 176      9A18E79C 
- 176      693AC8
- 177 00fd 4D70D3B4 		.ascii	"Mp\323\264\010\223\3121\265\211&\305\244)>o\365\260"
- 177      0893CA31 
- 177      B58926C5 
-ARM GAS  /tmp/ccQLIwXB.s 			page 7
+ 162      2A0003
+ 163              		.text
+ 164              		.section	.gnu.lto_.lto.ff5b5966139addc5,"e",%progbits
+ 165 0000 0B000300 		.ascii	"\013\000\003\000\001\000\000\000"
+ 165      01000000 
+ 166              		.text
+ 167              		.section	.gnu.lto_portab_setup.0.ff5b5966139addc5,"e",%progbits
+ 168 0000 789CCB67 		.ascii	"x\234\313g``H\002be fdf`\2344\261\213\211\241\241\241"
+ 168      60604802 
+ 168      62652066 
+ 168      6466609C 
+ 168      34B18B89 
+ 169 0017 C1819D89 		.ascii	"\301\201\235\211\261qb\027'\343vF0\217\221\241\236\211"
+ 169      B1716217 
+ 169      27E37646 
+ 169      308F91A1 
+ 169      9E89
+ 170 0029 B19E7121 		.ascii	"\261\236q!\263>\220\373\343\351\253\015g\031\033V\034"
+ 170      B33E90FB 
+ 170      E3E9AB0D 
+ 170      67191B56 
+ 170      1C
+ 171 003a 607CC5C0 		.ascii	"`|\305\300P\317\000\005\334\0206#\020\257\277\304z\240"
+ 171      50CF0005 
+ 171      DC103623 
+ 171      10AFBFC4 
+ 171      7AA0
+ 172 004c E1CFFFFE 		.ascii	"\341\317\377\376\206\206\263\217\031\3372110\314c\006"
+ 172      8686B38F 
+ 172      19DF3231 
+ 172      3130CC63 
+ 172      06
+ 173 005d 99DAC0C2 		.ascii	"\231\332\300\302\330p\200\201a>3\023\204\323\010\344"
+ 173      D8708081 
+ 173      613E3313 
+ 173      84D308E4 
+ 174 006d 7C676A50 		.ascii	"|gjPb\370\317\324\244\0006d\0363#B\035\003C\200~F~n"
+ 174      62F8CFD4 
+ 174      A4003664 
+ 174      1E332342 
+ 174      1D034380 
+ 175 0085 AA7E517E 		.ascii	"\252~Q~\222\276KbI\242~^~|qe^\262\276sFfR\246\1770\204"
+ 175      92BE4B62 
+ 175      49A27E5E 
+ 175      7E7C7165 
+ 175      5EB2BE73 
+ 176 00a0 0E2E294D 		.ascii	"\016.)M\311\314\327/\317/\312..HLN\215/)*\315\313\326"
+ 176      C9CCD72F 
+ 176      CF2FCA2E 
+ 176      2E484C4E 
+ 176      8D2F292A 
+ 177 00b7 0F0EF135 		.ascii	"\017\016\36156\212w\017\360t\212O\313,\312-O,J\325g"
+ 177      368A770F 
+ 177      F0748A4F 
+ 177      CB2CCA2D 
+ 177      4F2C4AD5 
+ 178 00cc E0D7D34F 		.ascii	"\340\327\323ONK\327/\310/*IL\322Kf\000\000\234\005N"
+ARM GAS  /tmp/ccAX5FJs.s 			page 6
 
 
- 177      A4293E6F 
- 177      F5B0
- 178 010f 38EBEACB 		.ascii	"8\353\352\313\352\000\034F\211\324\245;Q\240\"=yg\212"
- 178      EA001C46 
- 178      89D4A53B 
- 178      51A0223D 
- 178      79678A
- 179 0122 A8336212 		.ascii	"\2503b\022:\356)\000\204d\001DLM&Q\310\241\2538\316"
- 179      3AEE2900 
- 179      84640144 
- 179      4C4D2651 
- 179      C8A1AB38 
- 180 0137 0B26034F 		.ascii	"\013&\003O!rI\213\241 \330a\262\004 \022\204\340\363"
- 180      2172498B 
- 180      A120D861 
- 180      B2042012 
- 180      84E0F3
- 181 014a 138609FD 		.ascii	"\023\206\011\375)\0067\024\271\264\372\376\311\223\020"
- 181      29063714 
- 181      B9B4FAFE 
- 181      C99310
- 182 0159 ED43826E 		.ascii	"\355C\202n{\010k\037@B\035\022]X\300\011M\374\274K\274"
- 182      7B086B1F 
- 182      40421D12 
- 182      5D58C009 
- 182      4DFCBC4B 
- 183 016e 0DC11012 		.ascii	"\015\301\020\022\351\004\234\020\320\346\206\245\357"
- 183      E9049C10 
- 183      D0E686A5 
- 183      EF
- 184 017b D10293DD 		.ascii	"\321\002\223\335\234\026o\317\306;\222\320\226\215\266"
- 184      9C166FCF 
- 184      C63B92D0 
- 184      968DB6
- 185 018a 04183D9B 		.ascii	"\004\030=\233\027\267>.\304\277\311c\023K\032f\026-"
- 185      17B73E2E 
- 185      C4BFC963 
- 185      134B1A66 
- 185      162D
- 186 019c 40DA0B54 		.ascii	"@\332\013T\007C\264b\263\027\360I\000\266\366\335\244"
- 186      0743B462 
- 186      B317F049 
- 186      00B6F6DD 
- 186      A4
- 187 01ad D88D4466 		.ascii	"\330\215Df\015\323\222\272\260v\343\015\353\221\240"
- 187      0DD392BA 
- 187      B076E30D 
- 187      EB91A0
- 188 01bc 1F426858 		.ascii	"\037BhX\305\347\210\317|\3275i\350\264\304\327\177\335"
- 188      C5E788CF 
- 188      7CD73569 
- 188      E8B4C4D7 
- 188      7FDD
- 189 01ce FEA31CBA 		.ascii	"\376\243\034\272\273$~\276\277\362}\363\300\253\313"
- 189      BB247EBE 
- 189      BFF27DF3 
- 189      C0ABCB
-ARM GAS  /tmp/ccQLIwXB.s 			page 8
+ 178      4E4BD72F 
+ 178      C82F2A49 
+ 178      4CD24B66 
+ 178      00009C05 
+ 179 00e1 01       		.ascii	"\001"
+ 180              		.text
+ 181              		.section	.gnu.lto_.symbol_nodes.ff5b5966139addc5,"e",%progbits
+ 182 0000 789C9362 		.ascii	"x\234\223b\000\002&\206z\206\006 `a\234p\216\001\310"
+ 182      00022686 
+ 182      7A860620 
+ 182      60619C70 
+ 182      8E01C8
+ 183 0013 66D8D5D0 		.ascii	"f\330\325\320\310\010\222\000\000[\235\006:"
+ 183      C8089200 
+ 183      005B9D06 
+ 183      3A
+ 184              		.text
+ 185              		.section	.gnu.lto_.refs.ff5b5966139addc5,"e",%progbits
+ 186 0000 789C6364 		.ascii	"x\234cd\000\002\000\000\012\000\002"
+ 186      00020000 
+ 186      0A0002
+ 187              		.text
+ 188              		.section	.gnu.lto_.decls.ff5b5966139addc5,"e",%progbits
+ 189 0000 789C5550 		.ascii	"x\234UPMh\023A\024~\263\011!j\260ImA\333\"\036{i\326"
+ 189      4D681341 
+ 189      147EB309 
+ 189      216AB049 
+ 189      6D41DB22 
+ 190 0018 AA6DAEC1 		.ascii	"\252m\256\301\012E\360\247\020=\207M\2725\241$\0336"
+ 190      0A45F0A7 
+ 190      103D874D 
+ 190      BA35A124 
+ 190      1B36
+ 191 002a 89D583F0 		.ascii	"\211\325\203\3606Y\342\036Tv{ZB\016\313\"\250\267\200"
+ 191      3659E21E 
+ 191      54767B5A 
+ 191      420ECB22 
+ 191      A8B780
+ 192 003d 82A66A18 		.ascii	"\202\246j\030\311R=\211\340A\304\034J\017\022\244\007"
+ 192      C9523D89 
+ 192      E041C41C 
+ 192      4A0F12A4 
+ 192      07
+ 193 004e EB29377D 		.ascii	"\353)7}\233 \342\2037\357\233\357}\363\346\233y\314"
+ 193      9B20E283 
+ 193      37EF9BEF 
+ 193      7DF3E69B 
+ 193      79CC
+ 194 0060 009E03C0 		.ascii	"\000\236\003\300\034\345o\012\201\352gJ\242\241Ky\217"
+ 194      1CE56F0A 
+ 194      81EA674A 
+ 194      A2A14B79 
+ 194      8F
+ 195 0071 FDC341E1 		.ascii	"\375\303A\341\353\307'\035\341\220!\242\201\\\363\302"
+ 195      EBC7271D 
+ 195      E19021A2 
+ 195      815CF3C2 
+ARM GAS  /tmp/ccAX5FJs.s 			page 7
 
 
- 190 01dd 62C57F25 		.ascii	"b\305\177%\022\201\217\021\237\266te\005\270\212\370"
- 190      12818F11 
- 190      9FB67465 
- 190      05B88AF8 
- 191 01ed 08AD8340 		.ascii	"\010\255\203@s\203\320Ur\353\027\206\354\376:\260\262"
- 191      7383D055 
- 191      72EB1786 
- 191      ECFE3AB0 
- 191      B2
- 192 01fe E336EC8B 		.ascii	"\3436\354\213\375\365\243\220\234\221ei\2528k7\346f"
- 192      FDF5A390 
- 192      9C916569 
- 192      AA386B37 
- 192      E666
- 193 0210 F60F18E5 		.ascii	"\366\017\030\345\312Y#h\015\224\325\261\211\323\331"
- 193      CA592368 
- 193      0D94D5B1 
- 193      89D3D9
- 194 021f 91DC1074 		.ascii	"\221\334\020tG\235\201J\216\333\303\303G\362p\322\250"
- 194      479D814A 
- 194      8EDBC3C3 
- 194      47F270D2 
- 194      A8
- 195 0230 3A75DB70 		.ascii	":u\333p\235)\243\340:\347\354rc\326\030\251\326\246"
- 195      9D29A3E0 
- 195      3AE7EC72 
- 195      63D618A9 
- 195      D6A6
- 196 0242 6A938D39 		.ascii	"j\223\2159^sv\327E3o\314;\356\364\354L\251l\027\033"
- 196      5E7376D7 
- 196      45336FCC 
- 196      3BEEF4EC 
- 196      4CA96C17 
- 197 0257 EEDCF969 		.ascii	"\356\334\371ic\362\324\211\274Y\034+\034?V\254\324\334"
- 197      63F2D489 
- 197      BC591C2B 
- 197      1C3F56AC 
- 197      D4DC
- 198 0269 FA7CC9B5 		.ascii	"\372|\311\265!\265\327\035\376\002\264^\341\344"
- 198      21B5D71D 
- 198      FE02B45E 
- 198      E1E4
- 199              		.text
- 200              		.section	.gnu.lto_.symtab.a8d1e07d887aa3cd,"e",%progbits
- 201 0000 706F7274 		.ascii	"portab_setup\000"
- 201      61625F73 
- 201      65747570 
- 201      00
- 202 000d 00       		.ascii	"\000"
- 203 000e 00       		.ascii	"\000"
- 204 000f 00       		.ascii	"\000"
- 205 0010 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
- 205      00000000 
- 206 0018 BC000000 		.ascii	"\274\000\000\000"
- 207              		.text
- 208              		.section	.gnu.lto_.ext_symtab.a8d1e07d887aa3cd,"e",%progbits
- 209 0000 01       		.ascii	"\001"
-ARM GAS  /tmp/ccQLIwXB.s 			page 9
+ 196 0081 A63BC036 		.ascii	"\246;\3006b\011w\007v\26310bV\215zm\003gl\242\233\315"
+ 196      62097707 
+ 196      76B33130 
+ 196      62568D7A 
+ 196      6D03676C 
+ 197 0098 3D537002 		.ascii	"=Sp\002\250\023\207\365\010\276\240R\313a\275\341\357"
+ 197      A81387F5 
+ 197      08BEA052 
+ 197      CB61BDE1 
+ 197      EF
+ 198 00a9 1F9C74EA 		.ascii	"\037\234t\3528\212O\014y\003\333<\344\366\260a\343\225"
+ 198      388A4F0C 
+ 198      7903DB3C 
+ 198      E4F6B061 
+ 198      E395
+ 199 00bb 6673F0C1 		.ascii	"fs\360\301\277\002\267\367Z\367'\234z\337pzx\312\241"
+ 199      BF02B7F7 
+ 199      5AF7279C 
+ 199      7ADF707A 
+ 199      78CAA1
+ 200 00ce 2936EADC 		.ascii	")6\352\334b\032\035\3218Z\234\231N\353\341#\3353\231"
+ 200      621A1DD1 
+ 200      385A9C99 
+ 200      4EEBE123 
+ 200      DD3399
+ 201 00e1 56D35173 		.ascii	"V\323Qsu#J\013Z\3307bf\015\215m\007\311\241\207\026"
+ 201      75234A0B 
+ 201      5AD83762 
+ 201      660D8D6D 
+ 201      07C9A187 
+ 202 00f6 2539F30C 		.ascii	"%9\363\014\313\3458I\022\323\237\036\303\032\015q\010"
+ 202      CBE53849 
+ 202      12D39F1E 
+ 202      C31A0D71 
+ 202      08
+ 203 0107 FCF44DBB 		.ascii	"\374\364M\273<\254\271\276\004\221\231\256\357\324#"
+ 203      3CACB9BE 
+ 203      049199AE 
+ 203      EFD423
+ 204 0116 80BAA171 		.ascii	"\200\272\241q\317\210Z\272N-\317\177`\337\320\034N\300"
+ 204      CF885ABA 
+ 204      4E2DCF7F 
+ 204      60DFD01C 
+ 204      4EC0
+ 205 0128 F1778801 		.ascii	"\361w\210\001\360\203\364\002-\311\240\260c\276\377"
+ 205      F083F402 
+ 205      2DC9A0B0 
+ 205      63BEFF
+ 206 0137 16FAE5FB 		.ascii	"\026\372\345\373\267\247\330\264\231\004v6\032\236\205"
+ 206      B7A7D8B4 
+ 206      99047636 
+ 206      1A9E85
+ 207 0146 F03C2C8D 		.ascii	"\360<,\215\237\273?\013;lt(\031\011\235`Bh\232E\203"
+ 207      9FBB3F0B 
+ 207      3B6C7428 
+ 207      19099D60 
+ 207      42689A45 
+ARM GAS  /tmp/ccAX5FJs.s 			page 8
 
 
- 210 0001 01       		.ascii	"\001"
- 211 0002 00       		.ascii	"\000"
- 212              		.text
- 213              		.section	.gnu.lto_.opts,"e",%progbits
- 214 0000 272D666E 		.ascii	"'-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-prote"
- 214      6F2D6F70 
- 214      656E6D70 
- 214      2720272D 
- 214      666E6F2D 
- 215 0033 6374696F 		.ascii	"ction=none' '-g' '-mcpu=cortex-m4' '-mthumb' '-mflo"
- 215      6E3D6E6F 
- 215      6E652720 
- 215      272D6727 
- 215      20272D6D 
- 216 0066 61742D61 		.ascii	"at-abi=soft' '-mlibarch=armv7e-m' '-march=armv7e-m'"
- 216      62693D73 
- 216      6F667427 
- 216      20272D6D 
- 216      6C696261 
- 217 0099 20272D4F 		.ascii	" '-O2' '-fomit-frame-pointer' '-falign-functions=16"
- 217      32272027 
- 217      2D666F6D 
- 217      69742D66 
- 217      72616D65 
- 218 00cc 2720272D 		.ascii	"' '-ffunction-sections' '-fdata-sections' '-fno-com"
- 218      6666756E 
- 218      6374696F 
- 218      6E2D7365 
- 218      6374696F 
- 219 00ff 6D6F6E27 		.ascii	"mon' '-flto' '-Xassembler' '-alms=./build/lst/porta"
- 219      20272D66 
- 219      6C746F27 
- 219      20272D58 
- 219      61737365 
- 220 0132 622E6C73 		.ascii	"b.lst'\000"
- 220      742700
- 221              		.text
- 222              		.comm	__gnu_lto_slim,1,1
- 223              		.ident	"GCC: (15:10.3-2021.07-4) 10.3.1 20210621 (release)"
-ARM GAS  /tmp/ccQLIwXB.s 			page 10
+ 208 015b C2B361BF 		.ascii	"\302\263a\277\027\230\243\366\001\342\324\017x\313\336"
+ 208      1798A3F6 
+ 208      01E2D40F 
+ 208      78CBDE
+ 209 016a 90A6CBE0 		.ascii	"\220\246\313\340p\364\357\374\335\360\340\330|\313\306"
+ 209      70F4EFFC 
+ 209      DDF0E0D8 
+ 209      7CCBC6
+ 210 0179 E197C6F7 		.ascii	"\341\227\306\367\375\231\335:>%i\262\313:\354\365hV"
+ 210      FD99DD3A 
+ 210      3E2569B2 
+ 210      CB3AECF5 
+ 210      6856
+ 211 018b 87C12BF6 		.ascii	"\207\301+\366\222%OC`q\031\216Hj\341vB^(\300\321\254"
+ 211      92254F43 
+ 211      6071198E 
+ 211      486AE176 
+ 211      425E28C0 
+ 212 01a1 A256E43B 		.ascii	"\242V\344;\013\205\013\020)\021\2242\351\262\\\251\226"
+ 212      0B850B10 
+ 212      29119432 
+ 212      E9B25CA9 
+ 212      96
+ 213 01b2 8EC7C5EC 		.ascii	"\216\307\305\354\306-qL\305\263\341\325k7\317\254,&"
+ 213      C62D714C 
+ 213      C5B3E1D5 
+ 213      6B37CFAC 
+ 213      2C26
+ 214 01c4 60F22F13 		.ascii	"`\362/\023_Z\226\023\353RF\20251\247\024dQU2\342%\251"
+ 214      5F5A9613 
+ 214      EB524682 
+ 214      3531A714 
+ 214      64515532 
+ 215 01db 22894525 		.ascii	"\"\211E%]\276[\314\212+\271|&\177=5\256\251Ju=\257\210"
+ 215      5DBE5BCC 
+ 215      8A2BB97C 
+ 215      267F3D35 
+ 215      AEA94A75 
+ 216 01f2 5B8ABA59 		.ascii	"[\212\272Y.IY9]Q\253\305M1u\343\352\371s\351\325\265"
+ 216      2E495939 
+ 216      5D51ABC5 
+ 216      4D3175E3 
+ 216      EAF973E9 
+ 217 0208 CB17D31B 		.ascii	"\313\027\323\033y\265\260%\251\262\010\023\377\337\015"
+ 217      79B5B025 
+ 217      A9B20813 
+ 217      FFDF0D
+ 218 0217 7F00323C 		.ascii	"\177\0002<\377@"
+ 218      FF40
+ 219              		.text
+ 220              		.section	.gnu.lto_.symtab.ff5b5966139addc5,"e",%progbits
+ 221 0000 706F7274 		.ascii	"portab_setup\000"
+ 221      61625F73 
+ 221      65747570 
+ 221      00
+ 222 000d 00       		.ascii	"\000"
+ 223 000e 00       		.ascii	"\000"
+ARM GAS  /tmp/ccAX5FJs.s 			page 9
+
+
+ 224 000f 00       		.ascii	"\000"
+ 225 0010 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
+ 225      00000000 
+ 226 0018 BE000000 		.ascii	"\276\000\000\000"
+ 227              		.text
+ 228              		.section	.gnu.lto_.ext_symtab.ff5b5966139addc5,"e",%progbits
+ 229 0000 01       		.ascii	"\001"
+ 230 0001 01       		.ascii	"\001"
+ 231 0002 00       		.ascii	"\000"
+ 232              		.text
+ 233              		.section	.gnu.lto_.opts,"e",%progbits
+ 234 0000 272D666E 		.ascii	"'-fno-openmp' '-fno-openacc' '-fno-pie' '-fcf-prote"
+ 234      6F2D6F70 
+ 234      656E6D70 
+ 234      2720272D 
+ 234      666E6F2D 
+ 235 0033 6374696F 		.ascii	"ction=none' '-g' '-mcpu=cortex-m4' '-mthumb' '-mflo"
+ 235      6E3D6E6F 
+ 235      6E652720 
+ 235      272D6727 
+ 235      20272D6D 
+ 236 0066 61742D61 		.ascii	"at-abi=soft' '-mlibarch=armv7e-m' '-march=armv7e-m'"
+ 236      62693D73 
+ 236      6F667427 
+ 236      20272D6D 
+ 236      6C696261 
+ 237 0099 20272D4F 		.ascii	" '-O2' '-fomit-frame-pointer' '-falign-functions=16"
+ 237      32272027 
+ 237      2D666F6D 
+ 237      69742D66 
+ 237      72616D65 
+ 238 00cc 2720272D 		.ascii	"' '-ffunction-sections' '-fdata-sections' '-fno-com"
+ 238      6666756E 
+ 238      6374696F 
+ 238      6E2D7365 
+ 238      6374696F 
+ 239 00ff 6D6F6E27 		.ascii	"mon' '-flto' '-Xassembler' '-alms=./build/lst/porta"
+ 239      20272D66 
+ 239      6C746F27 
+ 239      20272D58 
+ 239      61737365 
+ 240 0132 622E6C73 		.ascii	"b.lst'\000"
+ 240      742700
+ 241              		.text
+ 242              		.comm	__gnu_lto_slim,1,1
+ 243              		.ident	"GCC: (Arm GNU Toolchain 11.3.Rel1) 11.3.1 20220712"
+ARM GAS  /tmp/ccAX5FJs.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 portab.c
-     /tmp/ccQLIwXB.s:17     .gnu.debuglto_.debug_info:0000000000000000 portab.c.f1de9903
+     /tmp/ccAX5FJs.s:19     .gnu.debuglto_.debug_info:0000000000000000 portab.c.56e7daba
                             *COM*:0000000000000001 __gnu_lto_slim
 
 NO UNDEFINED SYMBOLS

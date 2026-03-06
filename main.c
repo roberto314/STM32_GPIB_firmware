@@ -172,7 +172,26 @@ char *completion_buffer[SHELL_MAX_COMPLETIONS];
 
 static const ShellCommand commands[] = {
   {"test",cmd_test},
-  {"debug",cmd_debug},
+  {"++help",cmd_help},
+  {"++addr",cmd_addr},
+  {"++auto",cmd_auto},
+  {"++echo",cmd_localecho},
+  {"++debug",cmd_debug},
+  {"++default",cmd_default},
+  {"++eoi",cmd_eoi},
+  {"++eos",cmd_eos},
+  {"++eot",cmd_eot},
+  {"++mode",cmd_mode},
+  {"++eot_enable",cmd_eot_en},
+  {"++srq",cmd_srq},
+  {"++trg",cmd_trg},
+  {"++spoll",cmd_spoll},
+  {"++ifc",cmd_ifc},
+  {"++llo",cmd_llo},
+  {"++loc",cmd_loc},
+  {"++clr",cmd_clr},
+  {"++ver",cmd_ver},
+  {".",cmd_gpib_cmd}, // last function gets called whenever all others are no match, needs '.' as name
   {NULL, NULL}
 };
 

@@ -11,6 +11,8 @@
 #ifndef USERLIB_INCLUDE_GPIB_H_
 #define USERLIB_INCLUDE_GPIB_H_
 
+#define PROLOGIX_VERSION "AVR488 GPIB-USB Controller Version 6.00" // firmware version displayed by the ++ver command (for Prologix compatibility)
+
 // GPIB Signal Lines
 #define DAV  PAL_LINE(GPIOB, 4)
 #define NRFD PAL_LINE(GPIOB, 10)
@@ -52,6 +54,8 @@
 
 THD_FUNCTION(GPIB_Thread, arg);
 
+void set_eos_string(uint8_t code);
+uint8_t srq_state(void);
 void init_GPIB(void);
 
 #endif /* USERLIB_INCLUDE_GPIB_H_ */
