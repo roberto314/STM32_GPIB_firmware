@@ -42,7 +42,7 @@ mailbox_t mb_dbg; // Mailbox for Debug Thread
 msg_t msgbuf_dbg[8]; // Message Bufer for Debug Thread
 uint8_t dbg_src;  // Debug Thread Vars.
 uint16_t hi, lo;  // Debug Thread Vars.
-uint8_t debuglevel = 0;
+uint8_t debuglevel = 2;
 /*===========================================================================*/
 /* Debug Thread                                                              */
 /* we get a msg which is a 32bit value, 32..25 is the source, 24..17 is the  */
@@ -123,14 +123,14 @@ static void vt2_cb(virtual_timer_t *vtp, void *p) { // Timer cb after 200ms (dou
   switch (btn_cnt){
   case 1:
     if (btn_second_edge){ // only for the first edge
-      chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 1));
+      chMBPostI(&mb_dbg, (msg_t) (uint32_t)(SRC1 | 1));
     }
     break;
   case 2:
-    chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 2));
+    chMBPostI(&mb_dbg, (msg_t) (uint32_t)(SRC1 | 2));
     break;
   default:
-    chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 3));
+    chMBPostI(&mb_dbg, (msg_t) (uint32_t)(SRC1 | 3));
     break;
   }
 
@@ -146,7 +146,7 @@ static void button_cb(void *arg) {
   }
   else{                  // very first negative going edge or Button released
     btn_second_edge = 1;
-    //chMBPostI(&mb_dbg, (msg_t) (uint32_t)((1<<24) | 4)); // crashes here!!
+    //chMBPostI(&mb_dbg, (msg_t) (uint32_t)(SRC1 | 4)); // crashes here!!
   }
   btn_cnt++;           // count edges
   chSysLockFromISR();
@@ -180,6 +180,7 @@ static const ShellCommand commands[] = {
   {"++default",cmd_default},
   {"++eoi",cmd_eoi},
   {"++eos",cmd_eos},
+  {"++clr",cmd_clr},
   {"++eot",cmd_eot},
   {"++mode",cmd_mode},
   {"++eot_enable",cmd_eot_en},
@@ -189,7 +190,11 @@ static const ShellCommand commands[] = {
   {"++ifc",cmd_ifc},
   {"++llo",cmd_llo},
   {"++loc",cmd_loc},
-  {"++clr",cmd_clr},
+  {"++lon",cmd_lon},
+  {"++get",cmd_get},
+  {"++status",cmd_status},
+  {"++read",cmd_read},
+  {"++read_tmo_ms",cmd_read_tmo_ms},
   {"++ver",cmd_ver},
   {".",cmd_gpib_cmd}, // last function gets called whenever all others are no match, needs '.' as name
   {NULL, NULL}
@@ -246,7 +251,8 @@ int main(void) {
 
   palSetLineMode(LED, PAL_MODE_OUTPUT_PUSHPULL);
   palSetLineMode(DEBUG1, PAL_MODE_OUTPUT_PUSHPULL);
-  palSetLineMode(DEBUG2, PAL_MODE_OUTPUT_PUSHPULL);
+  palClearLine(DEBUG1);
+  //palSetLineMode(DEBUG2, PAL_MODE_OUTPUT_PUSHPULL);
   palSetLineMode(EXTBTN, PAL_MODE_INPUT_PULLUP); // Button
   /* Enabling the event and associating the callback. */
   palEnableLineEvent(EXTBTN, PAL_EVENT_MODE_FALLING_EDGE);
@@ -274,7 +280,7 @@ int main(void) {
   chEvtRegister(&shell_terminated, &shell_el, 0);
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
   init_GPIB();
-  chThdCreateStatic(waGPIB_Thread, sizeof(waGPIB_Thread), NORMALPRIO, GPIB_Thread, NULL);
+  
   chThdCreateStatic(waDebugThread1, sizeof(waDebugThread1), NORMALPRIO, DebugThread1, NULL);
   /*
    * Normal main() thread activity, in this demo it does nothing except

@@ -30,8 +30,12 @@ void cmd_spoll(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_ifc(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_llo(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_loc(BaseSequentialStream *chp, int argc, char *argv[]);
+void cmd_lon(BaseSequentialStream *chp, int argc, char *argv[]);
+void cmd_status(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_clr(BaseSequentialStream *chp, int argc, char *argv[]);
-
+void cmd_read_tmo_ms(BaseSequentialStream *chp, int argc, char *argv[]);
+void cmd_read(BaseSequentialStream *chp, int argc, char *argv[]);
+void cmd_get(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_ver(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_test(BaseSequentialStream *chp, int argc, char *argv[]);
 void cmd_debug(BaseSequentialStream *chp, int argc, char *argv[]);

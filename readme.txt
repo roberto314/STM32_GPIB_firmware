@@ -16,47 +16,68 @@ Build with eclipse or simply type "make" in the code folder.
 
 Functions:
 
-Pinout:
-PA0  - KEY Button
-PA1  - free
-PA2  - TX2 (listener 2)
-PA3  - RX2 (listener 2)
-PA4  - free
-PA5  - free
-PA6  - free
-PA7  - free
-PA8  - free
-PA9  - TX1 (listener 1)
-PA10 - RX1 (listener 1)
-PA11 - USD DM (Ostrich)
-PA12 - USB DP (Ostrich)
-PA13 - SWDIO
-PA14 - SWCLK
-PA15 - free
+Pinout:            Project Pins
+PA0  - KEY Button | Button
+PA1  - free       | REN
+PA2  - TX2        | -
+PA3  - RX2        | -
+PA4  - CS_FLASH   | DEBUG
+PA5  - SCK        | -
+PA6  - MISO       | -
+PA7  - MOSI       | -
+PA8  - free       | NDAC
+PA9  - TX1        | DC
+PA10 - RX1        | SRQ
+PA11 - USD DM     | USB
+PA12 - USB DP     | USB
+PA13 - SWDIO      | -
+PA14 - SWCLK      | -
+PA15 - free       | ATN
+                  | 
+PB0  - free       | DIO1 
+PB1  - free       | DIO2 
+PB2  - free       | DIO3 
+PB3  - free       | DIO4 
+PB4  - free       | DIO5 
+PB5  - free       | DIO6 
+PB6  - SCL1       | DIO7 
+PB7  - SDA1       | DIO8 
+PB8  - SCL1       | -
+PB9  - SDA1       | -
+PB10 - free       | NRFD
+                  | 
+PB12 - free       | EOI
+PB13 - free       | DAV
+PB14 - free       | PE  (not conn.)
+PB15 - free       | IFC
+                  | 
+PC13 - LED        | LED
+PC14 - free       | SC
+PC15 - free       | TE
 
-PB0  - free
-PB1  - free
-PB2  - free
-PB3  - free
-PB4  - free
-PB5  - free
-PB6  - free
-PB7  - free
-PB8  - free
-PB9  - free
-PB10 - free
+**************
+**************
+** NEEDED!! **
+**************
+**************
 
-PB12 - free
-PB13 - free
-PB14 - free
-PB15 - free
+-------------------------------------------------------------------------------
+add to os/various/shell/shell.c (line 59)
+extern uint8_t localecho;
 
-PC13 - LED
-PC14 - Debug
-PC15 - Debug
+-------------------------------------------------------------------------------
+Replace list_commands in os/various/shell/shell.c with this version:
 
+#if (SHELL_CMD_HELP_ENABLED == TRUE)
+static void list_commands(BaseSequentialStream *chp, const ShellCommand *scp) {
 
-NEEDED!!
+  while (scp->sc_name != NULL) {
+    chprintf(chp, "%s ", scp->sc_name);
+    scp++;
+  }
+}
+#endif
+
 -------------------------------------------------------------------------------
 Replace cmdexec in os/various/shell/shell.c with this version:
 
@@ -77,18 +98,7 @@ static bool cmdexec(const ShellCommand *scp, BaseSequentialStream *chp,
   }
   return true;
 }
--------------------------------------------------------------------------------
-Replace list_commands in os/various/shell/shell.c with this version:
 
-#if (SHELL_CMD_HELP_ENABLED == TRUE)
-static void list_commands(BaseSequentialStream *chp, const ShellCommand *scp) {
-
-  while (scp->sc_name != NULL) {
-    chprintf(chp, "%s ", scp->sc_name);
-    scp++;
-  }
-}
-#endif
 -------------------------------------------------------------------------------
 Replace IN THD_FUNCTION(shellThread, p) the following part 
 (also in os/various/shell/shell.c): 
@@ -124,9 +134,6 @@ Replace IN: bool shellGetLine(ShellConfig *scfg, char *line, unsigned size, Shel
       }
       *p++ = (char)c;
     }
--------------------------------------------------------------------------------
-add to os/various/shell/shell.c (line 59)
-extern uint8_t localecho;
 
 
 -------------------------------------------------------------------------------
