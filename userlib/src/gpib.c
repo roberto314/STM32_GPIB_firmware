@@ -346,6 +346,7 @@ uint8_t gpib_receive(uint8_t *byte){
       return 0xff;
     }
   }
+  gptStopTimer(&GPTD4);
 
   // Assert NRFD, informing talker to not change the data lines
   output_low(NRFD);
@@ -368,19 +369,22 @@ uint8_t gpib_receive(uint8_t *byte){
   while(!(input(DAV)) && (!timeout)) {
     _wdt_reset();
     if(timeout){
-      if (debuglevel & 2)
+      if (debuglevel & 2){
         chprintf(dbg, "Timeout: Waiting for DAV to go high while reading\n\r");
+      }
+      device_listen = false;
       prep_gpib_pins();
       return 0xff;
     }
   }
+  gptStopTimer(&GPTD4);
 
   // Prep for next byte, we have not accepted anything
   output_low(NDAC);
 
-  if (debuglevel & 2)
+  if (debuglevel & 2){
     chprintf(dbg, "EOI: %x\n\r", (eoiStatus>0)?0:1); // invert EOI (negative logic)
-
+  }
   *byte = a;
   return eoiStatus;
 }
@@ -393,9 +397,9 @@ uint8_t gpib_read(uint8_t read_until_eoi){
   uint8_t errorFound = 0;
   uint8_t reading_done = false;
 
-  if (debuglevel & 2)
+  if (debuglevel & 2){
     chprintf(dbg, "GPIB read. EOI: %d Address: %d\r\n", read_until_eoi, partnerAddress);
-
+  }
   cmd_buf[0] = CMD_UNT;
   cmd_buf[1] = CMD_UNL;
   cmd_buf[2] = partnerAddress + 0x40;
@@ -483,8 +487,7 @@ void serial_poll(uint8_t address){
   cmd_buf[0] = CMD_SPD; // disable serial poll
   error = error || gpib_cmd(cmd_buf, 1);
   if (!error){
-    itoa(status_byte,(char *)buffer,2);
-    chprintf(dbg, "%s\n\r", buffer);
+    chprintf(dbg, "Status: %02X\n\r", status_byte);
   }
   else
       chprintf(dbg, "ERROR in spoll\n\r");
@@ -586,7 +589,12 @@ void do_trg(uint8_t address){
 }
 
 void do_change_mode(void){
-
+  if (mode) {
+    gpib_controller_assign(0x00);
+  }
+  else{
+    output_float(REN);
+  }
 }
 /*
 * Not an internal command, send to GPIB bus
@@ -597,8 +605,8 @@ void do_gpib_command(char *cm){
   if (mode) {
     writeError = addressTarget(partnerAddress); // always send UNT, UNL, address+0x20
     // Set the controller into talker mode
-   // cmd_buf[0] = myAddress + 0x40;
-   // writeError = writeError || gpib_cmd(cmd_buf, 1);
+    // cmd_buf[0] = myAddress + 0x40;
+    // writeError = writeError || gpib_cmd(cmd_buf, 1);
   }
 
   if (mode || device_talk) {
@@ -619,7 +627,7 @@ void do_gpib_command(char *cm){
     else {
       if (localecho){
         if (writeError)
-          chprintf(dbg, "ERROR in loc\n\r");
+          chprintf(dbg, "ERROR in query\n\r");
 
         else {
           if (debuglevel & 2)
