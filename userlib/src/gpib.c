@@ -59,7 +59,7 @@ static void gptcb(GPTDriver *drv){
  * GPT4 configuration.
  */
 static const GPTConfig gptcfg1 = {
-  .frequency    = 100000U, //100kHz Timer Freq.
+  .frequency    = 10000U, //10kHz Timer Freq., 100us/tic, 
   .callback     = gptcb,
   .cr2          = 0U,
   .dier         = 0U
@@ -78,7 +78,8 @@ static THD_FUNCTION(GPIB_Thread, arg) {
 }
 
 void myputchar (uint8_t c){
-  streamPut(dbg, c);
+  //streamPut(dbg, c);
+  chprintf(dbg, "%c",c);
 }
 
 void _wdt_reset (void){
@@ -188,7 +189,6 @@ uint8_t _gpib_write(uint8_t *bytes, uint16_t length, uint8_t attention, uint8_t 
   for (i=0; i<length; i++){ //Loop through each character, write to bus
     a = bytes[i]; // Character to send
     // Wait for listeners to be ready for data (NRFD should be high and NDAC low)
-//palSetLine(DEBUG1);
     // Wait for NDAC to go low, indicating previous bit is now done with
     timeout = 0;
     gptStartContinuous(&GPTD4, (uint32_t)timeout_value/10);
@@ -202,7 +202,7 @@ uint8_t _gpib_write(uint8_t *bytes, uint16_t length, uint8_t attention, uint8_t 
         return 1;
       }
     }
-//palClearLine(DEBUG1);
+
     gptStopTimer(&GPTD4);
 
     if (debuglevel & 2){
@@ -212,7 +212,6 @@ uint8_t _gpib_write(uint8_t *bytes, uint16_t length, uint8_t attention, uint8_t 
         chprintf(dbg, "Writing data byte: %c 0x%02x\n\r", isprint(a)?a:' ', a);
     }
 
-palSetLine(DEBUG1);
     // Enable port B for output and put the byte on the data lines using negative logic
     palSetGroupMode(GPIOB, PAL_GROUP_MASK(8), 0, PAL_MODE_OUTPUT_PUSHPULL); // set PB0..7 as output
     palWriteGroup(GPIOB, PAL_GROUP_MASK(8), 0, ~a);
@@ -259,9 +258,6 @@ palSetLine(DEBUG1);
       }
     }
     gptStopTimer(&GPTD4);
-
-palClearLine(DEBUG1);
-//return 0;
 
     output_high(DAV); // Byte has been accepted by all, indicate the byte is no longer valid
 
@@ -336,7 +332,7 @@ uint8_t gpib_receive(uint8_t *byte){
 
   // Wait for DAV to go low (talker informing us the byte is ready)
   timeout = 0;
-  gptStartContinuous(&GPTD4, (uint32_t)timeout_value/100);
+  gptStartContinuous(&GPTD4, (uint32_t)timeout_value*10);
   while (input(DAV) && (!timeout)) {
     _wdt_reset();
     if (timeout){
@@ -358,14 +354,17 @@ uint8_t gpib_receive(uint8_t *byte){
 
   if (debuglevel & 2)
     chprintf(dbg, "Read byte: %c 0x%02x\n\r", isprint(a)?a:' ', a);
+palSetLine(DEBUG1);
 
   // Deassert NDAC, informing talker that we have accepted the byte
   output_float(NDAC);
   _delay_us(150);
+palClearLine(DEBUG1);
 
   // Wait for DAV to go high (talker knows that we have read the byte)
+palSetLine(DEBUG1);
   timeout = 0;
-  gptStartContinuous(&GPTD4, (uint32_t)timeout_value/100);
+  gptStartContinuous(&GPTD4, (uint32_t)timeout_value*10);
   while(!(input(DAV)) && (!timeout)) {
     _wdt_reset();
     if(timeout){
@@ -378,6 +377,7 @@ uint8_t gpib_receive(uint8_t *byte){
     }
   }
   gptStopTimer(&GPTD4);
+palClearLine(DEBUG1);
 
   // Prep for next byte, we have not accepted anything
   output_low(NDAC);
@@ -407,10 +407,9 @@ uint8_t gpib_read(uint8_t read_until_eoi){
   if (errorFound)
     return 1;
 
-  if (debuglevel & 2)
-    chprintf(dbg, "gpib_read loop start\n\r");
 
   if (read_until_eoi == 1){ // loop until we get an EOI indication
+    if (debuglevel & 2) chprintf(dbg, "gpib_read eoi...\n\r");
     do {
       eoiStatus = gpib_receive(&readCharacter); // eoiStatus is line level
       _wdt_reset();
@@ -425,6 +424,7 @@ uint8_t gpib_read(uint8_t read_until_eoi){
       myputchar(eot_char);
   }
   else { // loop until we get an EOS character
+    if (debuglevel & 2) chprintf(dbg, "gpib_read eos...\n\r");
     do {
       eoiStatus = gpib_receive(&readCharacter);
       _wdt_reset();
