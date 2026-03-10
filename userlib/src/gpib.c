@@ -395,10 +395,10 @@ uint8_t gpib_read(uint8_t read_until_eoi){
   uint8_t readCharacter, eoiStatus;
   uint8_t errorFound = 0;
   uint8_t reading_done = false;
-  uint8_t readBuf[100];
-  uint8_t i = 0, j=0;
-  uint8_t *bufPnt;
-  bufPnt = &readBuf[0];
+  //uint8_t readBuf[100];
+  //uint8_t i = 0, j=0;
+  //uint8_t *bufPnt;
+  //bufPnt = &readBuf[0];
   
   if (debuglevel & 2){
     chprintf(dbg, "GPIB read. EOI: %d Address: %d\r\n", read_until_eoi, partnerAddress);
