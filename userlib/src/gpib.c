@@ -396,17 +396,23 @@ uint8_t gpib_read(uint8_t read_until_eoi){
   uint8_t readCharacter, eoiStatus;
   uint8_t errorFound = 0;
   uint8_t reading_done = false;
-
+  uint8_t readBuf[100];
+  uint8_t i = 0, j=0;
+  uint8_t *bufPnt;
+  bufPnt = &readBuf[0];
+  
   if (debuglevel & 2){
     chprintf(dbg, "GPIB read. EOI: %d Address: %d\r\n", read_until_eoi, partnerAddress);
   }
-  cmd_buf[0] = CMD_UNT;
-  cmd_buf[1] = CMD_UNL;
-  cmd_buf[2] = partnerAddress + 0x40;
-  errorFound = gpib_cmd(cmd_buf, 3);
-  if (errorFound)
-    return 1;
-
+  if (mode) {
+    cmd_buf[0] = CMD_UNT;
+    cmd_buf[1] = CMD_UNL;
+    cmd_buf[2] = myAddress + 0x20;      // Set the controller into listener mode
+    cmd_buf[3] = partnerAddress + 0x40; // Set target device into talker mode
+    errorFound = gpib_cmd(cmd_buf, 3);
+    if (errorFound)
+      return 1;
+  }
 
   if (read_until_eoi == 1){ // loop until we get an EOI indication
     if (debuglevel & 2) chprintf(dbg, "gpib_read eoi...\n\r");
@@ -443,10 +449,12 @@ uint8_t gpib_read(uint8_t read_until_eoi){
     } while (reading_done == false);
   }
 
-  // Command all talkers and listeners to stop
-  cmd_buf[0] = CMD_UNT;
-  cmd_buf[1] = CMD_UNL;
-  errorFound = gpib_cmd(cmd_buf, 2);
+  if (mode){
+    // Command all talkers and listeners to stop
+    cmd_buf[0] = CMD_UNT;
+    cmd_buf[1] = CMD_UNL;
+    errorFound = gpib_cmd(cmd_buf, 2);
+  }
 
   if (debuglevel & 2)
     chprintf(dbg, "gpib_read end (error=%d\n\r", errorFound);
