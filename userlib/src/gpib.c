@@ -25,7 +25,7 @@ uint8_t eoiUse = 1;     // whether we are using EOI to signal end of message fro
 uint8_t eot_enable = 0; // whether to append eot_char after EOI
 uint8_t eot_char = 13;  // end of transmission character added after EOI (default = CR)
 uint8_t eos_code = 3;   // end of transmission code to end a transmission to the instrument
-uint8_t eos_char = 10;  // Default end of string character.
+uint8_t eos_char;       // Default end of string character. Gets filled by set_eos_string()
 uint8_t eos_string[3];  // characters to end a transmission to the instrument
 uint16_t timeout_value = 1000; // used for send/receive timeout monitoring - default timeout is 1000 milliseconds
 uint8_t mode = 1;
@@ -354,15 +354,12 @@ uint8_t gpib_receive(uint8_t *byte){
 
   if (debuglevel & 2)
     chprintf(dbg, "Read byte: %c 0x%02x\n\r", isprint(a)?a:' ', a);
-palSetLine(DEBUG1);
 
   // Deassert NDAC, informing talker that we have accepted the byte
   output_float(NDAC);
   _delay_us(150);
-palClearLine(DEBUG1);
 
   // Wait for DAV to go high (talker knows that we have read the byte)
-palSetLine(DEBUG1);
   timeout = 0;
   gptStartContinuous(&GPTD4, (uint32_t)timeout_value*10);
   while(!(input(DAV)) && (!timeout)) {
@@ -377,7 +374,6 @@ palSetLine(DEBUG1);
     }
   }
   gptStopTimer(&GPTD4);
-palClearLine(DEBUG1);
 
   // Prep for next byte, we have not accepted anything
   output_low(NDAC);
@@ -388,6 +384,9 @@ palClearLine(DEBUG1);
   *byte = a;
   return eoiStatus;
 }
+
+//palSetLine(DEBUG1);
+//palClearLine(DEBUG1);
 
 /*
  * Receive a multiple bytes from the GPIB bus until either EOI or timeout. Returns non-zero if an error occurs.
@@ -417,30 +416,34 @@ uint8_t gpib_read(uint8_t read_until_eoi){
   if (read_until_eoi == 1){ // loop until we get an EOI indication
     if (debuglevel & 2) chprintf(dbg, "gpib_read eoi...\n\r");
     do {
-      eoiStatus = gpib_receive(&readCharacter); // eoiStatus is line level
+      eoiStatus = gpib_receive(&readCharacter); // eoiStatus is line level of EOI
       _wdt_reset();
-      if (!debuglevel)
+      if (!debuglevel){
         myputchar(readCharacter);
+      }
       if(eoiStatus == 0xff){
         errorFound = 1;
         break;
       }
-    } while (eoiStatus);
-    if ( eot_enable)
+    } while (eoiStatus); // as long as EOI is high
+
+    if ( eot_enable){
       myputchar(eot_char);
+    }
   }
-  else { // loop until we get an EOS character
+  else {                   // loop until we get an EOS character
     if (debuglevel & 2) chprintf(dbg, "gpib_read eos...\n\r");
     do {
-      eoiStatus = gpib_receive(&readCharacter);
+      eoiStatus = gpib_receive(&readCharacter); // eoiStatus is line level of EOI
       _wdt_reset();
-      if (!debuglevel)
+      if (!debuglevel){
         myputchar(readCharacter);
+      }
       if (eoiStatus==0xff){
         errorFound = 1;
         break;
       }
-      if (eos_code != 3) {
+      if (eos_code != 3) { // means we are looking for a CR or LF or a combination of these
         if (readCharacter == eos_string[0]) // Check for EOM chars
             reading_done = true;
         if (readCharacter == eos_string[1])
