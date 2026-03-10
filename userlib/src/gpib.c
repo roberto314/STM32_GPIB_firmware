@@ -427,7 +427,7 @@ uint8_t gpib_read(uint8_t read_until_eoi){
       }
     } while (eoiStatus); // as long as EOI is high
 
-    if ( eot_enable){
+    if (eot_enable){
       myputchar(eot_char);
     }
   }
